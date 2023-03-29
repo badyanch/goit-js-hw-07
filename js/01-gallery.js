@@ -25,8 +25,7 @@ galleryEl.addEventListener("click", (evt) => {
 
 function markupGalleryItems(listItems) {
   return listItems
-    .map(
-      (item) =>
+    .map((item) =>
         `<div class="gallery__item">
           <a class="gallery__link" href="${item.original}">
             <img
@@ -37,8 +36,7 @@ function markupGalleryItems(listItems) {
             />
           </a>
         </div>`
-    )
-    .join("");
+    ).join("");
 }
 
 function onToggleModal(link) {
