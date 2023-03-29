@@ -4,24 +4,23 @@ import { galleryItems } from "./gallery-items.js";
 console.log(galleryItems);
 
 const galleryEl = document.querySelector(".gallery");
-
 galleryEl.innerHTML = markupGalleryItems(galleryItems);
+galleryEl.addEventListener("click", (evt) => {
+    if (evt.target.nodeName !== "IMG") {
+      return;
+    }
+  
+    onToggleModal(evt.target.dataset.source);
+  });
+  
 
 const linksImages = galleryEl.querySelectorAll(".gallery__link");
-
 linksImages.forEach((link) =>
   link.addEventListener("click", (evt) => {
     evt.preventDefault();
   })
 );
 
-galleryEl.addEventListener("click", (evt) => {
-  if (evt.target.nodeName !== "IMG") {
-    return;
-  }
-
-  onToggleModal(evt.target.dataset.source);
-});
 
 function markupGalleryItems(listItems) {
   return listItems
