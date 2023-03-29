@@ -21,7 +21,6 @@ linksImages.forEach((link) =>
   })
 );
 
-
 function markupGalleryItems(listItems) {
   return listItems
     .map((item) =>
